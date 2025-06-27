@@ -1,0 +1,28 @@
+// adicionar item na lista de desejo
+async function addItem(wishList, item) {
+    wishList.push(item)
+    console.log(`${item.name} adicionado a lista de desejos`)
+}
+
+// remover item da lista de desejo
+async function removeItem(wishList, item) {
+    let index = wishList.findIndex(i=>i.name==item.name)
+    
+    if(index >= 0) {
+        wishList[index].splice(index, 1);
+    }
+}
+
+
+// mostrar itens da lista de desejo
+async function listItems(wishList){
+    console.log("Lista de desejos");
+    wishList.forEach((item, index) => {
+        console.log(`       =======================
+        ${index+1}.
+        ${item.name} - $$ ${item.price}`)
+    });
+}
+
+
+// alertar caso o valor do item esteja abaixo do limite
