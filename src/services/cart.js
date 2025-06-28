@@ -30,8 +30,9 @@ async function removeItem(userCart, item) {
 }
 //calculate
 async function calculateTotalValue(userCart) {
-    console.log("=========================")
-    console.log(`   TOTAL VALUE: $$ ${userCart.reduce((total, item) => total + item.subtotal(),0)}`); // estudar mais reduce
+    let totalValue = userCart.reduce((total, item) => total + item.subtotal(),0);
+    console.log("       =========================")
+    console.log(`       TOTAL VALUE: $$ ${totalValue}\n`); // estudar mais reduce
 }
 
 async function displayCart(userCart) {
